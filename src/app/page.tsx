@@ -139,7 +139,7 @@ const PhoneMockupRecord = () => (
     <text x="30" y="395" fontSize="8" fill="#BBB">Jul 08, 2026</text>
     {/* Combine button */}
     <rect x="16" y="418" width="198" height="36" rx="18" fill="url(#micGrad)" />
-    <text x="115" y="440" fontSize="10" fontWeight="600" fill="white" textAnchor="middle">☑ Combine Summaries</text>
+    <text x="115" y="440" fontSize="10" fontWeight="600" fill="white" textAnchor="middle"> Combine Summaries</text>
     {/* Bottom nav */}
     <rect x="0" y="458" width="230" height="22" fill="#F8F8F8" />
     <text x="45" y="472" fontSize="8" fontWeight="700" fill="#F97316" textAnchor="middle">● Record</text>
