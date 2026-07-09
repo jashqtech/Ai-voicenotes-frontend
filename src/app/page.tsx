@@ -15,7 +15,7 @@ interface FaqItem {
 const FAQ_DATA: FaqItem[] = [
   {
     q: "How accurate is the AI transcription?",
-    a: "Voicenote AI uses the Gemini API for speech-to-text, delivering high accuracy transcription even with accents, technical jargon, and noisy environments. The model handles natural conversational speech with punctuation and speaker context.",
+    a: "Voicenote AI uses the AI for speech-to-text, delivering high accuracy transcription even with accents, technical jargon, and noisy environments. The model handles natural conversational speech with punctuation and speaker context.",
   },
   {
     q: "Does recording work in the background?",
@@ -23,7 +23,7 @@ const FAQ_DATA: FaqItem[] = [
   },
   {
     q: "How does the AI summary generation work?",
-    a: "Once you stop recording, the transcript is sent to our FastAPI backend which prompts the Gemini model with a structured format. It extracts key discussion points, decisions, commitments, follow-up tasks, and action items — all automatically.",
+    a: "Once you stop recording, the transcript is sent to our FastAPI backend which prompts the AI model with a structured format. It extracts key discussion points, decisions, commitments, follow-up tasks, and action items — all automatically.",
   },
   {
     q: "What is semantic search and how does it help me?",
@@ -31,7 +31,7 @@ const FAQ_DATA: FaqItem[] = [
   },
   {
     q: "Is my data secure and private?",
-    a: "Your recordings are processed securely through the Gemini API and stored in our backend. Transcripts and summaries are tied to your account and never shared with third parties. You can delete any recording at any time.",
+    a: "Your recordings are processed securely through the AI and stored in our backend. Transcripts and summaries are tied to your account and never shared with third parties. You can delete any recording at any time.",
   },
 ];
 
@@ -98,15 +98,15 @@ const PhoneMockupRecord = () => (
   <svg viewBox="0 0 230 480" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", display: "block" }}>
     <rect width="230" height="480" rx="36" fill="#F8F8F8" />
     {/* Status bar */}
-    <text x="16" y="24" fontSize="10" fontWeight="600" fill="#111">2:37</text>
-    <rect x="16" y="38" width="90" height="18" rx="4" fill="#1A1A1A" />
-    <text x="20" y="51" fontSize="11" fontWeight="800" fill="white">Voice Notes</text>
-    <text x="16" y="64" fontSize="9" fill="#888">Thursday, July 09</text>
+    {/* <text x="16" y="24" fontSize="10" fontWeight="600" fill="#111">2:37</text> */}
+    {/* <rect x="16" y="38" width="90" height="18" rx="4" fill="#1A1A1A" />
+    <text x="20" y="51" fontSize="11" fontWeight="800" fill="white">Voice Notes</text> */}
+    {/* <text x="16" y="64" fontSize="9" fill="#888">Thursday, July 09</text> */}
     {/* Icons top right */}
-    <rect x="168" y="34" width="24" height="24" rx="12" fill="url(#micGrad)" />
-    <rect x="196" y="34" width="24" height="24" rx="12" fill="url(#micGrad)" />
+    {/* <rect x="168" y="34" width="24" height="24" rx="12" fill="url(#micGrad)" />
+    <rect x="196" y="34" width="24" height="24" rx="12" fill="url(#micGrad)" /> */}
     {/* "Tap to start" label */}
-    <text x="115" y="112" fontSize="10" fill="#888" textAnchor="middle">Tap to start a new recording</text>
+    <text x="115" y="82" fontSize="10" fill="#888" textAnchor="middle">Tap to start a new recording</text>
     {/* Big mic button */}
     <defs>
       <radialGradient id="micGlow" cx="50%" cy="50%" r="50%">
@@ -118,11 +118,11 @@ const PhoneMockupRecord = () => (
         <stop offset="100%" stopColor="#F97316" />
       </linearGradient>
     </defs>
-    <circle cx="115" cy="185" r="55" fill="url(#micGlow)" />
-    <circle cx="115" cy="185" r="40" fill="url(#micGrad)" />
-    <path d="M115 173a5 5 0 0 0-5 5v10a5 5 0 0 0 10 0v-10a5 5 0 0 0-5-5Z" fill="white" strokeWidth="0" />
-    <path d="M122 185v3a7 7 0 0 1-14 0v-3" stroke="white" strokeWidth="1.8" strokeLinecap="round" fill="none" />
-    <line x1="115" y1="195" x2="115" y2="199" stroke="white" strokeWidth="1.8" strokeLinecap="round" />
+    <circle cx="115" cy="155" r="55" fill="url(#micGlow)" />
+    <circle cx="115" cy="155" r="40" fill="url(#micGrad)" />
+    <path d="M115 143a5 5 0 0 0-5 5v10a5 5 0 0 0 10 0v-10a5 5 0 0 0-5-5Z" fill="white" strokeWidth="0" />
+    <path d="M122 155v3a7 7 0 0 1-14 0v-3" stroke="white" strokeWidth="1.8" strokeLinecap="round" fill="none" />
+    <line x1="115" y1="165" x2="115" y2="169" stroke="white" strokeWidth="1.8" strokeLinecap="round" />
     {/* Summary card 1 */}
     <rect x="16" y="240" width="198" height="78" rx="12" fill="white" stroke="#E5E7EB" strokeWidth="1" />
     <text x="30" y="260" fontSize="7.5" fontWeight="700" fill="#F97316">✦ JEEL AGARWAL PROFESSIONAL PROFILE...</text>
@@ -157,8 +157,8 @@ const PhoneMockupLibrary = () => (
         <stop offset="100%" stopColor="#F97316" />
       </linearGradient>
     </defs>
-    <rect x="16" y="24" width="90" height="18" rx="4" fill="#1A1A1A" />
-    <text x="20" y="37" fontSize="12" fontWeight="800" fill="white">Library</text>
+    {/* <rect x="16" y="24" width="90" height="18" rx="4" fill="#1A1A1A" />
+    <text x="20" y="37" fontSize="12" fontWeight="800" fill="white">Library</text> */}
     <text x="16" y="51" fontSize="9" fill="#888">10 recordings</text>
     {/* Search bar */}
     <rect x="16" y="60" width="198" height="26" rx="10" fill="white" stroke="#E5E7EB" strokeWidth="1" />
@@ -209,8 +209,8 @@ const PhoneMockupCalendar = () => (
         <stop offset="100%" stopColor="#F97316" />
       </linearGradient>
     </defs>
-    <rect x="16" y="24" width="90" height="18" rx="4" fill="#1A1A1A" />
-    <text x="20" y="37" fontSize="12" fontWeight="800" fill="white">Calendar</text>
+    {/* <rect x="16" y="24" width="90" height="18" rx="4" fill="#1A1A1A" />
+    <text x="20" y="37" fontSize="12" fontWeight="800" fill="white">Calendar</text> */}
     <text x="16" y="52" fontSize="9" fill="#888">Ask about any day</text>
     {/* Mini calendar */}
     <rect x="16" y="65" width="198" height="140" rx="12" fill="white" stroke="#E5E7EB" strokeWidth="1" />
@@ -241,7 +241,7 @@ const PhoneMockupCalendar = () => (
     <text x="34" y="307" fontSize="7.5" fill="#444">page. 2) Setup DNS. 3) QA sync Monday.</text>
     {/* AI badge */}
     <rect x="22" y="322" width="58" height="14" rx="7" fill="rgba(124,58,237,0.08)" />
-    <text x="51" y="332" fontSize="7" fontWeight="700" fill="#7C3AED" textAnchor="middle">✦ Gemini AI</text>
+    <text x="51" y="332" fontSize="7" fontWeight="700" fill="#7C3AED" textAnchor="middle">✦ AI</text>
     {/* Input bar */}
     <rect x="16" y="415" width="156" height="30" rx="10" fill="white" stroke="#E5E7EB" strokeWidth="1" />
     <text x="30" y="433" fontSize="8" fill="#BBB">Ask a question...</text>
@@ -445,9 +445,7 @@ export default function Home() {
 
             {/* Subtitle */}
             <p className={styles.heroSubtitle}>
-              Voicenote AI automatically transcribes your conversations, generates
-              structured summaries, extracts action items, and lets you query any
-              past recording with natural language — all on your phone.
+              Record conversations, get instant summaries, extract key points, and chat with your recordings using AI — all on your phone.
             </p>
 
             {/* CTAs */}
@@ -499,17 +497,17 @@ export default function Home() {
             </div>
 
             {/* Scroll indicator */}
-            <div className={styles.scrollIndicator} aria-hidden="true">
+            {/* <div className={styles.scrollIndicator} aria-hidden="true">
               <span className={styles.scrollLine} />
               <span>Scroll</span>
-            </div>
+            </div> */}
           </div>
         </section>
 
         {/* ============================
             STATS BAR
         ============================= */}
-        <div className={styles.statsBar} aria-label="App statistics">
+        {/* <div className={styles.statsBar} aria-label="App statistics">
           <div className={styles.statsBarInner}>
             <div className={styles.statItem}>
               <span ref={recordingsCounter.ref} className={styles.statValue}>
@@ -537,7 +535,7 @@ export default function Home() {
               <span className={styles.statLabel}>Powerful Screens</span>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* ============================
             FEATURES SECTION
@@ -585,10 +583,10 @@ export default function Home() {
                   📝
                 </div>
                 <h3 className={styles.featureCardTitle}>
-                  Gemini-Powered Transcription
+                  AI-Powered Transcription
                 </h3>
                 <p className={styles.featureCardText}>
-                  Every word captured with high precision. The Gemini API
+                  Every word captured with high precision. The AI
                   converts speech to clean, formatted text — automatically when
                   you stop recording.
                 </p>
@@ -650,7 +648,7 @@ export default function Home() {
                 <p className={styles.featureCardText}>
                   Travel back to any date. Pick a day on the calendar and ask
                   "What did I discuss?" — powered by vector embeddings and
-                  Gemini's contextual reasoning.
+                  AI's contextual reasoning.
                 </p>
               </div>
             </div>
@@ -667,9 +665,9 @@ export default function Home() {
         >
           <div className={styles.sectionInner}>
             <div className={`${styles.sectionHeader} ${styles.sectionHeaderCentered} animate-on-scroll`}>
-              <span className={styles.sectionLabel}>
+              {/* <span className={styles.sectionLabel}>
                 <span>⚙️</span> Workflow
-              </span>
+              </span> */}
               <h2 id="how-heading" className={styles.sectionTitle}>
                 From speech to insights in{" "}
                 <span className="gradient-text">4 simple steps</span>
@@ -683,23 +681,23 @@ export default function Home() {
             <div className={styles.stepsContainer}>
               {[
                 {
-                  icon: "🎙️",
+                  // icon: "🎙️",
                   title: "Record",
                   desc: "Tap record and speak naturally. The app captures everything — meetings, calls, brainstorms — even in the background.",
                 },
                 {
-                  icon: "🔤",
+                  // icon: "🔤",
                   title: "Transcribe",
-                  desc: "When you stop, the audio is sent to the Gemini API which generates a complete, accurate transcript of your recording.",
+                  desc: "When you stop, the audio is sent to the AI which generates a complete, accurate transcript of your recording.",
                 },
                 {
-                  icon: "✦",
+                  // icon: "✦",
                   title: "Summarize",
-                  desc: "The FastAPI backend uses Gemini to extract key points, decisions, commitments, and action items from the transcript.",
+                  desc: "The FastAPI backend uses AI to extract key points, decisions, commitments, and action items from the transcript.",
                 },
                 {
-                  icon: "💬",
-                  title: "Query Anytime",
+                  // icon: "💬",
+                  title: "Ask Anytime",
                   desc: "Ask questions about any past recording using the Calendar screen. Semantic search retrieves the right context instantly.",
                 },
               ].map((step, i) => (
@@ -709,10 +707,10 @@ export default function Home() {
                 >
                   <div className={styles.stepNumber}>
                     <span className={styles.stepNumBadge}>{i + 1}</span>
-                    Step {i + 1}
+                    {/* Step {i + 1} */}
                   </div>
                   <span className={styles.stepIcon} aria-hidden="true">
-                    {step.icon}
+                    {/* {step.icon} */}
                   </span>
                   <h3 className={styles.stepTitle}>{step.title}</h3>
                   <p className={styles.stepDesc}>{step.desc}</p>
@@ -743,7 +741,7 @@ export default function Home() {
                 </h2>
                 <p className={styles.sectionSubtitle} style={{ marginBottom: "1.75rem" }}>
                   Voicenote AI doesn't just transcribe — it understands context.
-                  The Gemini model extracts the information that matters most so
+                  The AI model extracts the information that matters most so
                   you never miss a commitment or decision.
                 </p>
 
@@ -828,7 +826,7 @@ export default function Home() {
                         <span aria-hidden="true">✓</span> 5 Action Items
                       </span>
                       <span className={styles.aiActionBadge} style={{ background: "var(--accent-purple-bg)", borderColor: "rgba(124,58,237,0.15)", color: "var(--accent-purple)" }}>
-                        <span aria-hidden="true">✦</span> Gemini Powered
+                        <span aria-hidden="true">✦</span> AI Powered
                       </span>
                     </div>
                   </div>
@@ -852,10 +850,10 @@ export default function Home() {
               {/* Left: info panel */}
               <div className={`${styles.screensText} animate-on-scroll`}>
                 <span className={styles.sectionLabel}>
-                  <span>📱</span> App Experience
+                  <span></span> App Experience
                 </span>
                 <h2 id="screens-heading" className={styles.sectionTitle}>
-                  Three powerful screens,{" "}
+                  Three User App screens,{" "}
                   <span className="gradient-text">one seamless workflow</span>
                 </h2>
 
@@ -923,7 +921,7 @@ export default function Home() {
           <div className={styles.sectionInner}>
             <div className={`${styles.sectionHeader} ${styles.sectionHeaderCentered} animate-on-scroll`}>
               <span className={styles.sectionLabel}>
-                <span>👥</span> Who It&apos;s For
+                <span></span> Who It&apos;s For
               </span>
               <h2 id="usecases-heading" className={styles.sectionTitle}>
                 Built for people who{" "}
@@ -987,7 +985,7 @@ export default function Home() {
                   </div>
                   <h3 className={styles.useCaseTitle}>{uc.title}</h3>
                   <p className={styles.useCaseText}>{uc.text}</p>
-                  <p className={styles.useCaseQuestion} aria-label="Example query">
+                  <p className={styles.useCaseQuestion} aria-label="Example question">
                     {uc.q}
                   </p>
                 </div>
@@ -1007,7 +1005,7 @@ export default function Home() {
           <div className={styles.sectionInner}>
             <div className={`${styles.sectionHeader} ${styles.sectionHeaderCentered} animate-on-scroll`}>
               <span className={styles.sectionLabel}>
-                <span>⚡</span> Built With
+                <span></span> Built With
               </span>
               <h2 id="tech-heading" className={styles.sectionTitle}>
                 Modern technology,{" "}
@@ -1015,7 +1013,7 @@ export default function Home() {
               </h2>
               <p className={styles.sectionSubtitle}>
                 Voicenote AI is built on a robust, scalable architecture
-                combining Flutter&apos;s native performance with Gemini&apos;s AI
+                combining Flutter&apos;s native performance with AI&apos;s AI
                 capabilities and FastAPI&apos;s speed.
               </p>
             </div>
@@ -1090,7 +1088,7 @@ export default function Home() {
           <div className={styles.sectionInner}>
             <div className={`${styles.sectionHeader} ${styles.sectionHeaderCentered} animate-on-scroll`}>
               <span className={styles.sectionLabel}>
-                <span>❓</span> FAQ
+                <span></span> FAQ
               </span>
               <h2 id="faq-heading" className={styles.sectionTitle}>
                 Frequently asked{" "}
@@ -1156,7 +1154,7 @@ export default function Home() {
                 ))}
               </div>
 
-              <p className={styles.ctaTagline}>speak · summarise · remember</p>
+              {/* <p className={styles.ctaTagline}>speak · summarise · remember</p> */}
 
               <h2 id="download-heading" className={styles.ctaTitle}>
                 Start capturing smarter{" "}
@@ -1165,7 +1163,7 @@ export default function Home() {
 
               <p className={styles.ctaSubtitle}>
                 Download Voicenote AI for free. Record, transcribe, summarize, and
-                query your conversations — all from your pocket.
+                Ask your conversations — all from your pocket.
               </p>
 
               <div className={styles.downloadButtons}>
@@ -1218,8 +1216,8 @@ export default function Home() {
               <span className={styles.footerBrandName}>Voicenote AI</span>
             </div>
             <p className={styles.footerDesc}>
-              Intelligently capture, summarize, and query your meetings and
-              conversations — powered by Gemini AI.
+              Intelligently capture, summarize, and ask your meetings and
+              conversations.
             </p>
             <p className={styles.footerTagline}>speak · summarise · remember</p>
           </div>
@@ -1266,7 +1264,7 @@ export default function Home() {
         <div className={styles.footerBottom}>
           <p className={styles.footerCopy}>
             © {new Date().getFullYear()} Voicenote AI. All rights reserved.
-            Built with Flutter & Gemini API.
+            Built with Flutter & PythonI.
           </p>
           <div className={styles.footerBottomRight}>
             <a href="#" className={styles.footerBottomLink}>

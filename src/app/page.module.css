@@ -261,6 +261,7 @@
   flex-wrap: wrap;
   margin-bottom: 3.5rem;
   animation: fadeInUp 0.6s 0.35s ease both;
+
 }
 
 /* Primary CTA — Orange gradient matching app button */
@@ -338,7 +339,7 @@
 .heroPhones {
   position: relative;
   display: flex;
-  margin-top: 30px;
+  top: 85px;
   justify-content: center;
   align-items: flex-end;
   gap: 0;
@@ -845,7 +846,7 @@
   flex-shrink: 0;
   margin-top: 1px;
   font-size: 0.6rem;
-  color: #fff;
+  color: #0e0d0d;
   font-weight: 700;
 }
 
@@ -1617,6 +1618,7 @@
 
   .heroPhones {
     height: 340px;
+
   }
 
   .phonePrimary {
