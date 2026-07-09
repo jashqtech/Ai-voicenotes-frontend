@@ -341,12 +341,11 @@
 .heroPhones {
   position: relative;
   display: flex;
-  top: 85px;
+  top: 20px;
   justify-content: center;
   align-items: flex-end;
   gap: 0;
   margin: 0 auto;
-  /* Remove container-level animation — each phone enters individually */
   height: 480px;
 }
 
@@ -356,28 +355,65 @@
 }
 
 /* ===== STAGGERED PHONE ENTRANCE WRAPPERS ===== */
-/* Keyframe defined HERE (inside the module) so CSS Modules can resolve it.
-   Do NOT reference keyframes from globals.css — modules scope names separately. */
+/* Keyframes defined HERE (inside the module) so CSS Modules can resolve them. */
+
+/* Center phone: slides up and rests at natural position */
 @keyframes slideUpPhone {
-  0%   { opacity: 0; transform: translateY(70px); }
-  65%  { opacity: 1; transform: translateY(-6px); }
-  82%  { transform: translateY(3px); }
-  100% { opacity: 1; transform: translateY(0px); }
+  0% {
+    opacity: 0;
+    transform: translateY(70px);
+  }
+
+  65% {
+    opacity: 1;
+    transform: translateY(-6px);
+  }
+
+  82% {
+    transform: translateY(3px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* Side phones: same motion but ENDS 30px lower so center appears tallest */
+@keyframes slideUpPhoneSide {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  65% {
+    opacity: 1;
+    transform: translateY(24px);
+  }
+
+  82% {
+    transform: translateY(33px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
 }
 
 .phoneEnterLeft {
-  /* Left phone enters first */
-  animation: slideUpPhone 0.85s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s both;
+  /* Left phone enters first, rests 30px lower than center */
+  animation: slideUpPhoneSide 0.85s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s both;
 }
 
 .phoneEnterCenter {
-  /* Center (main) phone enters second */
+  /* Center (main) phone enters second, rests at natural height */
   animation: slideUpPhone 0.85s cubic-bezier(0.22, 0.61, 0.36, 1) 0.5s both;
 }
 
 .phoneEnterRight {
-  /* Right phone enters last */
-  animation: slideUpPhone 0.85s cubic-bezier(0.22, 0.61, 0.36, 1) 0.8s both;
+  /* Right phone enters last, rests 30px lower than center */
+  animation: slideUpPhoneSide 0.85s cubic-bezier(0.22, 0.61, 0.36, 1) 0.8s both;
 }
 
 .phonePrimary {
