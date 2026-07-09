@@ -23,7 +23,7 @@ const FAQ_DATA: FaqItem[] = [
   },
   {
     q: "How does the AI summary generation work?",
-    a: "Once you stop recording, the transcript is sent to our FastAPI backend which prompts the AI model with a structured format. It extracts key discussion points, decisions, commitments, follow-up tasks, and action items — all automatically.",
+    a: "Once you stop recording, the transcript is sent to our AI model. It extracts key discussion points, decisions, commitments, follow-up tasks, and action items — all automatically.",
   },
   {
     q: "What is semantic search and how does it help me?",
@@ -1104,45 +1104,51 @@ export default function Home() {
               {FAQ_DATA.map((item, i) => {
                 const isOpen = openFaq === i;
                 return (
+                  /* Outer wrapper: IntersectionObserver manages `is-visible` here.
+                     React NEVER changes this element's className so `is-visible` is never wiped. */
                   <div
                     key={i}
-                    className={`${styles.faqItem} ${isOpen ? styles.faqItemOpen : ""} animate-on-scroll delay-${(i % 3) + 1}`}
+                    className={`animate-on-scroll delay-${(i % 3) + 1}`}
                     role="listitem"
                   >
-                    <button
-                      id={`faq-btn-${i}`}
-                      className={styles.faqBtn}
-                      aria-expanded={isOpen}
-                      aria-controls={`faq-answer-${i}`}
-                      onClick={() => setOpenFaq(isOpen ? null : i)}
-                    >
-                      <span className={styles.faqQuestion}>{item.q}</span>
-                      <span
-                        className={styles.faqChevron}
-                        style={{
-                          display: "inline-flex",
-                          transition: "transform 0.3s ease",
-                          transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
-                          color: isOpen ? "var(--accent-purple)" : "var(--text-muted)",
-                        }}
-                        aria-hidden="true"
-                      >
-                        <ChevronDown size={18} />
-                      </span>
-                    </button>
-                    {/* JS-controlled height — most reliable accordion approach */}
+                    {/* Inner element: React manages isOpen state here, no scroll-animation class */}
                     <div
-                      id={`faq-answer-${i}`}
-                      role="region"
-                      aria-labelledby={`faq-btn-${i}`}
-                      className={styles.faqAnswer}
-                      style={{
-                        maxHeight: isOpen ? "500px" : "0",
-                        paddingBottom: isOpen ? "1.25rem" : "0",
-                        paddingTop: isOpen ? "0.25rem" : "0",
-                      }}
+                      className={`${styles.faqItem} ${isOpen ? styles.faqItemOpen : ""}`}
                     >
-                      {item.a}
+                      <button
+                        id={`faq-btn-${i}`}
+                        className={styles.faqBtn}
+                        aria-expanded={isOpen}
+                        aria-controls={`faq-answer-${i}`}
+                        onClick={() => setOpenFaq(isOpen ? null : i)}
+                      >
+                        <span className={styles.faqQuestion}>{item.q}</span>
+                        <span
+                          className={styles.faqChevron}
+                          style={{
+                            display: "inline-flex",
+                            transition: "transform 0.3s ease",
+                            transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+                            color: isOpen ? "var(--accent-purple)" : "var(--text-muted)",
+                          }}
+                          aria-hidden="true"
+                        >
+                          <ChevronDown size={18} />
+                        </span>
+                      </button>
+                      <div
+                        id={`faq-answer-${i}`}
+                        role="region"
+                        aria-labelledby={`faq-btn-${i}`}
+                        className={styles.faqAnswer}
+                        style={{
+                          maxHeight: isOpen ? "500px" : "0",
+                          paddingBottom: isOpen ? "1.25rem" : "0",
+                          paddingTop: isOpen ? "0.25rem" : "0",
+                        }}
+                      >
+                        {item.a}
+                      </div>
                     </div>
                   </div>
                 );
@@ -1279,7 +1285,7 @@ export default function Home() {
         <div className={styles.footerBottom}>
           <p className={styles.footerCopy}>
             © {new Date().getFullYear()} Voicenote AI. All rights reserved.
-            Built with Flutter & PythonI.
+            {/* Built with Flutter & PythonI. */}
           </p>
           <div className={styles.footerBottomRight}>
             <a href="#" className={styles.footerBottomLink}>
