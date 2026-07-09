@@ -471,24 +471,31 @@ export default function Home() {
 
             {/* Phone mockups */}
             <div className={styles.heroPhones} aria-label="App mockups">
-              {/* Left secondary phone */}
-              <div className={`${styles.phoneContainer} ${styles.phoneSecondaryLeft}`}>
-                <div className={`${styles.phoneMockup} ${styles.phoneSecondary}`}>
-                  <PhoneMockupLibrary />
+
+              {/* Left secondary phone — enters first (delay 0.25s) */}
+              <div className={styles.phoneEnterLeft}>
+                <div className={`${styles.phoneContainer} ${styles.phoneSecondaryLeft}`}>
+                  <div className={`${styles.phoneMockup} ${styles.phoneSecondary}`}>
+                    <PhoneMockupLibrary />
+                  </div>
                 </div>
               </div>
 
-              {/* Primary center phone */}
-              <div className={`${styles.phoneContainer} ${styles.phonePrimary}`}>
-                <div className={styles.phoneMockup}>
-                  <PhoneMockupRecord />
+              {/* Primary center phone — enters second (delay 0.55s) */}
+              <div className={styles.phoneEnterCenter}>
+                <div className={`${styles.phoneContainer} ${styles.phonePrimary}`}>
+                  <div className={styles.phoneMockup}>
+                    <PhoneMockupRecord />
+                  </div>
                 </div>
               </div>
 
-              {/* Right secondary phone */}
-              <div className={`${styles.phoneContainer} ${styles.phoneSecondaryRight}`}>
-                <div className={`${styles.phoneMockup} ${styles.phoneSecondary}`}>
-                  <PhoneMockupCalendar />
+              {/* Right secondary phone — enters last (delay 0.85s) */}
+              <div className={styles.phoneEnterRight}>
+                <div className={`${styles.phoneContainer} ${styles.phoneSecondaryRight}`}>
+                  <div className={`${styles.phoneMockup} ${styles.phoneSecondary}`}>
+                    <PhoneMockupCalendar />
+                  </div>
                 </div>
               </div>
 
