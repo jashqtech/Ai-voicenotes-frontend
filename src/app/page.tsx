@@ -753,7 +753,7 @@ export default function Home() {
                     "Action items & task lists",
                     "Overall meeting summary",
                   ].map((item, i) => (
-                    <li key={i} className={styles.screenBullet}>
+                    <li key={i} className={`${styles.screenBullet} ${styles.screenBulletLight}`}>
                       <span className={styles.bulletCheck} aria-hidden="true">✓</span>
                       {item}
                     </li>
@@ -1117,15 +1117,30 @@ export default function Home() {
                       onClick={() => setOpenFaq(isOpen ? null : i)}
                     >
                       <span className={styles.faqQuestion}>{item.q}</span>
-                      <ChevronDown
-                        size={18}
-                      />
+                      <span
+                        className={styles.faqChevron}
+                        style={{
+                          display: "inline-flex",
+                          transition: "transform 0.3s ease",
+                          transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+                          color: isOpen ? "var(--accent-purple)" : "var(--text-muted)",
+                        }}
+                        aria-hidden="true"
+                      >
+                        <ChevronDown size={18} />
+                      </span>
                     </button>
+                    {/* JS-controlled height — most reliable accordion approach */}
                     <div
                       id={`faq-answer-${i}`}
                       role="region"
                       aria-labelledby={`faq-btn-${i}`}
-                      className={`${styles.faqAnswer} ${isOpen ? styles.faqAnswerOpen : ""}`}
+                      className={styles.faqAnswer}
+                      style={{
+                        maxHeight: isOpen ? "500px" : "0",
+                        paddingBottom: isOpen ? "1.25rem" : "0",
+                        paddingTop: isOpen ? "0.25rem" : "0",
+                      }}
                     >
                       {item.a}
                     </div>
