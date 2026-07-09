@@ -404,16 +404,24 @@
 .phoneEnterLeft {
   /* Left phone enters first, rests 30px lower than center */
   animation: slideUpPhoneSide 0.85s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s both;
+  position: relative;
+  z-index: 8;
 }
 
 .phoneEnterCenter {
   /* Center (main) phone enters second, rests at natural height */
   animation: slideUpPhone 0.85s cubic-bezier(0.22, 0.61, 0.36, 1) 0.5s both;
+  position: relative;
+  z-index: 10;
+  opacity: 1;
+  /* Ensures middle screen overlaps on top of left and right sibling screens */
 }
 
 .phoneEnterRight {
   /* Right phone enters last, rests 30px lower than center */
   animation: slideUpPhoneSide 0.85s cubic-bezier(0.22, 0.61, 0.36, 1) 0.8s both;
+  position: relative;
+  z-index: 8;
 }
 
 .phonePrimary {
@@ -429,7 +437,8 @@
   position: relative;
   z-index: 8;
   margin-bottom: -20px;
-  opacity: 0.82;
+  opacity: 0.95;
+  /* Increased opacity to make the background screens more visible */
   transform-origin: bottom center;
 }
 
